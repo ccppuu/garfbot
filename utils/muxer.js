@@ -1,4 +1,5 @@
 const _ = require('lodash');
+const Promise = require('bluebird');
 const config = require('config');
 const path = require('path');
 
@@ -19,8 +20,6 @@ console.log('plugins', plugins);
  * @param {string} data.message.text
  */
 module.exports = (data) => {
-  console.log(data);
-
   const self = data.self;
   const message = data.message;
 
@@ -32,18 +31,14 @@ module.exports = (data) => {
   const isToMe = replyRe.test(message.text);
   if (!isToMe) return null;
 
-  // Iterate through all of the plugins. The first regex match will be used.
-  // TODO: allow multiple matches
-  var reply;
-  _.each(plugins, plugin => {
-    if (!plugin.regex) return;
+  const promises = _(plugins)
+    .filter(plugin => {
+      return !!plugin.regex && plugin.regex.test(message.text)
+    })
+    .map(plugin => {
+      return plugin.fn(message.text);
+    })
+    .value();
 
-    var isMatch = plugin.regex.test(message.text);
-    if (isMatch) {
-      reply = plugin.fn(message.text);
-      return;
-    }
-  });
-
-  return reply;
+  return Promise.all(promises);
 };

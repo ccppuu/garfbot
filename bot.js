@@ -19,18 +19,19 @@ bot.on('start', () => {
 bot.on('message', (data) => {
   switch (data.type) {
     case 'message':
-      const reply = muxer({
+
+      muxer({
         self: {
           id: bot.self.id,
           name: bot.self.name
         },
         message: data
+      }).then(replies => {
+        _(replies).each(reply => {
+          bot.postMessageToChannel(config.slack.default_room, reply, params)
+            .fail(console.error);
+        })
       });
-
-      if (reply) {
-        bot.postMessageToChannel(config.slack.default_room, reply, params)
-          .fail(console.error);
-      }
       break;
   }
 });

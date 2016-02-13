@@ -4,6 +4,6 @@ module.exports = {
   description: 'say hello with garf',
 
   fn: (data) => {
-    return 'hello';
+    return Promise.resolve('hello');
   }
 };
