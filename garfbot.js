@@ -17,8 +17,8 @@ slack.on('message', message => {
       channel.postMessage({
         text,
         username: config.username,
-        icon_emoji: ":garf:"
+        icon_emoji: ':garf:'
       });
     });
-  })
+  });
 });
