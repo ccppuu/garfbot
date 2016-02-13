@@ -1,5 +1,22 @@
 {
   "username": "garfbot",
 
-  "plugins_directory": "plugins"
+  "plugins_directory": "plugins",
+
+  "google": {
+    "cse_id": null,
+    "api_key": null
+  },
+
+  "slack": {
+    "api_token": null,
+    "default_room": "general"
+  },
+
+  "twitter": {
+    "consumer_key": null,
+    "consumer_secret": null,
+    "access_token": null,
+    "access_token_secret": null
+  }
 }
