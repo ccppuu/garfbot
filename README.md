@@ -1,4 +1,8 @@
+![jackedgarf](https://i.ytimg.com/vi/F47-cFmq2ZI/hqdefault.jpg)
+
 # garfbot
+[![Circle CI](https://circleci.com/gh/doeg/garfbot.svg?style=shield)](https://circleci.com/gh/doeg/garfbot)
+
 gotta go fast
 
 ## How to add a plugin
