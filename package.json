@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/doeg/sanic-bot#readme",
   "dependencies": {
-    "config": "^1.19.0"
+    "config": "^1.19.0",
+    "slackbots": "^0.5.1"
   }
 }
