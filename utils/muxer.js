@@ -2,14 +2,13 @@ const _ = require('lodash');
 const Promise = require('bluebird');
 const config = require('config');
 const path = require('path');
+const logger = require('./logger');
 
 // Load plugins
 const pathToPlugins = path.join(__dirname, '..', 'plugins');
 const plugins = require('require-all')({
   dirname: pathToPlugins
 });
-
-console.log('plugins', plugins);
 
 /**
  * @param {object} data
@@ -20,8 +19,6 @@ console.log('plugins', plugins);
  * @param {string} data.message.text
  */
 module.exports = (data) => {
-  console.log(data);
-
   const self = data.self;
   const message = data.message;
 
