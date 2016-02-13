@@ -8,6 +8,14 @@
     "api_key": null
   },
 
+  "mongo": {
+    "user": null,
+    "password": null,
+    "port": null,
+    "hosts": [],
+    "db": null,
+  },
+
   "slack": {
     "api_token": null,
     "default_room": "general"
