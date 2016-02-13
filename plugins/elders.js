@@ -1,5 +1,5 @@
 module.exports = {
-  regex: /hello/,
+  regex: /\!oldman/,
   fn: (data) => {
     return 'the elders';
   }

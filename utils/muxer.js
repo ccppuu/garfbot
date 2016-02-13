@@ -22,7 +22,7 @@ module.exports = (data) => {
   _.each(plugins, plugin => {
     var isMatch = plugin.regex.test(data.text);
     if (isMatch) {
-      reply = data.text;
+      reply = plugin.fn(data.text);
       return;
     }
   });
