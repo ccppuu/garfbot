@@ -45,12 +45,11 @@ function generateSentence(tweets) {
 
   _.each(tweets, tweet => {
     var text = stripTweet(tweet);
-    console.log(text);
     ngram.addSentenceToModel(model, text);
   });
 
   const chance = new Chance();
-  const len = chance.integer({min: 6, max: 12});
+  const len = chance.integer({ min: 6, max: 12 });
   return ngram.generateSentence(model, len);
 }
 
@@ -65,4 +64,4 @@ module.exports = {
         return `"${sentence}" - @${handle}`;
       });
   }
-}
+};
