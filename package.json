@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/doeg/sanic-bot/issues"
   },
-  "homepage": "https://github.com/doeg/sanic-bot#readme"
+  "homepage": "https://github.com/doeg/sanic-bot#readme",
+  "dependencies": {
+    "config": "^1.19.0"
+  }
 }

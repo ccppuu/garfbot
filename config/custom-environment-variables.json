@@ -1,0 +1,5 @@
+{
+  "slack": {
+    "api_token": "SANIC_SLACK_TOKEN"
+  }
+}
