@@ -20,7 +20,6 @@ console.log('plugins', plugins);
  * @param {string} data.message.text
  */
 module.exports = (data) => {
-
   console.log(data);
 
   const self = data.self;
@@ -36,7 +35,7 @@ module.exports = (data) => {
 
   const promises = _(plugins)
     .filter(plugin => {
-      return !!plugin.regex && plugin.regex.test(message.text)
+      return !!plugin.regex && plugin.regex.test(message.text);
     })
     .map(plugin => {
       return plugin.fn(message.text);

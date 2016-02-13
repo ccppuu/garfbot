@@ -3,7 +3,7 @@ module.exports = {
 
   description: 'say hello with garf',
 
-  fn: (data) => {
+  fn(data) {
     return Promise.resolve('hello');
   }
 };

@@ -30,7 +30,7 @@ bot.on('message', (data) => {
         _(replies).each(reply => {
           bot.postMessageToChannel(config.slack.default_room, reply, params)
             .fail(console.error);
-        })
+        });
       });
       break;
   }

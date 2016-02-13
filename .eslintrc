@@ -3,5 +3,16 @@
   "env": {
     "node": true,
     "es6": true
+  },
+
+  "rules": {
+    "no-console": 0,
+    "comma-dangle": 0,
+    "default-case": 0,
+    "eol-last": 0,
+    "no-undef": 0,
+    "no-unused-vars": 0,
+    "no-var": 0,
+    "arrow-body-style": 0
   }
 }

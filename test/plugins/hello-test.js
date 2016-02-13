@@ -10,7 +10,8 @@ function mux(text) {
     message: {
       text: `<@test>: ${text}`
     }
-  }).then(results => {
+  })
+  .then(results => {
     return results[0];
   });
 }
@@ -21,6 +22,6 @@ describe('hello plugin', () => {
       .then(result => {
         assert.equal('hello', result);
         done();
-      })
+      });
   });
 });
