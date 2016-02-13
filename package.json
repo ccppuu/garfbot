@@ -33,6 +33,7 @@
     "lodash": "^4.3.0",
     "request": "^2.69.0",
     "require-all": "^2.0.0",
+    "simple-ngram-markov": "^1.0.4",
     "slack-client": "^1.5.1",
     "twit": "^2.2.2"
   },
