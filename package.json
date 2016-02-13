@@ -27,12 +27,14 @@
   "homepage": "https://github.com/doeg/garfbot#readme",
   "dependencies": {
     "bluebird": "^3.3.0",
+    "chance": "^1.0.0",
     "config": "^1.19.0",
     "googleapis": "^2.1.7",
     "lodash": "^4.3.0",
     "request": "^2.69.0",
     "require-all": "^2.0.0",
-    "slack-client": "^1.5.1"
+    "slack-client": "^1.5.1",
+    "twit": "^2.2.2"
   },
   "devDependencies": {
     "chai": "^3.5.0",
