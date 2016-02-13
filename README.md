@@ -1,2 +1,2 @@
-# sanic-bot
+# garfbot
 gotta go fast
