@@ -4,7 +4,8 @@
   "description": "gotta go fast loyal minion",
   "main": "garfbot.js",
   "scripts": {
-    "test": "NODE_ENV=test mocha test/**/*.js"
+    "test": "npm run mocha",
+    "mocha": "NODE_ENV=test mocha test/**/*.js"
   },
   "repository": {
     "type": "git",
