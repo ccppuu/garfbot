@@ -2,6 +2,11 @@
 gotta go fast
 
 ## How to add a plugin
+### Getting started
+1. Create a `config/local.json` with all your secrets :crystal_ball:
+2. `npm install`
+3. `npm start`
+
 ### Developing
 Create a file named [plugin].js in the plugins/ folder. A plugin in its simplest form defines a regex, for matching Slack messages, and a `fn` function, for generating a string with which to reply. Take a look at `plugins/hello.js` for a simple example.
 
