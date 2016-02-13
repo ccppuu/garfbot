@@ -1,0 +1,13 @@
+// IMPORTANT: you must have a config/local.json (or environment variables)
+// containing the secrets specified by the null fields below.
+{
+  "google": {
+    "cse_id": null,
+    "api_key": null
+  },
+
+  "slack": {
+    "api_token": null,
+    "default_room": "neobothell"
+  }
+}
