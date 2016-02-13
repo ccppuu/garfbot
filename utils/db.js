@@ -1,6 +1,6 @@
 const config = require('config');
 const makeURL = require('mongo-make-url');
+const mongoose = require('mongoose');
 
-console.log(config.mongo);
 const mongoURL = makeURL(config.mongo);
-console.log(mongoURL);
+return mongoose.connect(mongoURL);

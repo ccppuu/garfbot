@@ -32,6 +32,7 @@
     "googleapis": "^2.1.7",
     "lodash": "^4.3.0",
     "mongo-make-url": "0.0.1",
+    "mongoose": "^4.4.3",
     "request": "^2.69.0",
     "require-all": "^2.0.0",
     "simple-ngram-markov": "^1.0.4",

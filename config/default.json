@@ -13,7 +13,7 @@
     "password": null,
     "port": null,
     "hosts": [],
-    "db": null,
+    "db": null
   },
 
   "slack": {
