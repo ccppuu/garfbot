@@ -13,8 +13,12 @@ slack.on('message', message => {
   muxer({
     self, message
   }).then(replies => {
-    _.each(replies, reply => {
-      channel.send(reply);
+    _.each(replies, text => {
+      channel.postMessage({
+        text,
+        username: config.username,
+        icon_emoji: ":garf:"
+      });
     });
   })
 });
