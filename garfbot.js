@@ -5,8 +5,8 @@ const muxer = require('./utils/muxer');
 const slack = require('./lib/slack');
 
 slack.on('message', message => {
-  var channel = slack.getChannelGroupOrDMByID(message.channel)
-  var user = slack.getUserByID(message.user)
+  var channel = slack.getChannelGroupOrDMByID(message.channel);
+  var user = slack.getUserByID(message.user);
 
   var self = slack.self;
 
