@@ -9,5 +9,7 @@
   "slack": {
     "api_token": null,
     "default_room": "neobothell"
-  }
+  },
+
+  "twitter": {}
 }
