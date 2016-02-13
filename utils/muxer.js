@@ -20,6 +20,9 @@ console.log('plugins', plugins);
  * @param {string} data.message.text
  */
 module.exports = (data) => {
+
+  console.log(data);
+
   const self = data.self;
   const message = data.message;
 
