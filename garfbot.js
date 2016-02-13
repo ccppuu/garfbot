@@ -2,39 +2,23 @@ const _ = require('lodash');
 const config = require('config');
 const logger = require('./utils/logger');
 const muxer = require('./utils/muxer');
-const SlackBot = require('slackbots');
+const slack = require('./lib/slack');
 
-const params = {
-  icon_emoji: ':garf:'
-};
+slack.on('message', message => {
+  var channel = slack.getChannelGroupOrDMByID(message.channel);
+  var user = slack.getUserByID(message.user);
 
-const bot = new SlackBot({
-  token: config.slack.api_token,
-  name: config.username
-});
+  var self = slack.self;
 
-bot.on('start', () => {
-  logger.log(`Connected as ${bot.self.name} (ID ${bot.self.id})`);
-});
-
-bot.on('message', (data) => {
-  switch (data.type) {
-    case 'message':
-      muxer({
-        self: {
-          id: bot.self.id,
-          name: bot.self.name
-        },
-        message: data
-      }).then(replies => {
-        _(replies).each(reply => {
-          bot.postMessageToChannel(config.slack.default_room, reply, params)
-            .fail(logger.error);
-        });
+  muxer({
+    self, message
+  }).then(replies => {
+    _.each(replies, text => {
+      channel.postMessage({
+        text,
+        username: config.username,
+        icon_emoji: ':garf:'
       });
-      break;
-
-    default:
-      break;
-  }
+    });
+  });
 });

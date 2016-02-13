@@ -24,11 +24,11 @@ module.exports = (data) => {
 
   // Ignore messages sent by the bot
   const sender = message.username;
-  if (sender === config.username) return null;
+  if (sender === config.username) return Promise.resolve();
 
   const replyRe = new RegExp(`<@${self.id}>:`);
   const isToMe = replyRe.test(message.text);
-  if (!isToMe) return null;
+  if (!isToMe) return Promise.resolve();
 
   const promises = _(plugins)
     .filter(plugin => {
