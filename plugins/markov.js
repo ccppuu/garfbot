@@ -1,4 +1,5 @@
 const _ = require('lodash');
+const Chance = require('chance');
 const logger = require('../utils/logger');
 const ngram = require('simple-ngram-markov');
 const twitter = require('../lib/twitter');
@@ -20,7 +21,7 @@ function getTweetsForUser(handle) {
     screen_name: handle,
     exclude_replies: true,
     include_rts: false,
-    count: 200
+    count: 150
   }).then(response => {
     const tweets = response.data;
     const texts = _.map(tweets, t => t.text);
@@ -48,7 +49,9 @@ function generateSentence(tweets) {
     ngram.addSentenceToModel(model, text);
   });
 
-  return ngram.generateSentence(model, 10);
+  const chance = new Chance();
+  const len = chance.integer({min: 6, max: 12});
+  return ngram.generateSentence(model, len);
 }
 
 module.exports = {
@@ -59,7 +62,7 @@ module.exports = {
     return getTweetsForUser(handle)
       .then(tweets => {
         const sentence = generateSentence(tweets);
-        return sentence;
+        return `"${sentence}" - @${handle}`;
       });
   }
 }
