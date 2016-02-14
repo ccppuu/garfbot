@@ -1,4 +1,5 @@
-const db = require('../lib/db');
+const logger = require('../utils/logger');
+const Pin = require('../models/pin-schema');
 
 const regex = /pin (\S*)/;
 
@@ -14,6 +15,19 @@ module.exports = {
     }
 
     const url = matches[1];
-    return Promise.resolve(`pinned ${url} :garf:`);
+    const pin = new Pin({ url });
+
+    return pin.save()
+      .then(result => {
+        logger.info(`saved ${url}`);
+        return Pin.count();
+      })
+      .then(count => {
+        logger.info('total pins:', count);
+        return `pinned ${url} :garf:`;
+      })
+      .catch(err => {
+        logger.error('error', err);
+      });
   }
 };
