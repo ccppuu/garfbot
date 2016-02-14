@@ -1,6 +1,6 @@
 const _ = require('lodash');
 const config = require('config');
-const db = require('./utils/db');
+const db = require('./lib/db');
 const logger = require('./utils/logger');
 const muxer = require('./utils/muxer');
 const slack = require('./lib/slack');
