@@ -11,8 +11,8 @@ module.exports = {
       Pin.syncRandom((err, result) => {
         if (err) return reject(err);
 
-        Pin.findRandom().limit(1).exec(function (err, pins) {
-          if (err) return reject(err);
+        Pin.findRandom().limit(1).exec((findRandomErr, pins) => {
+          if (findRandomErr) return reject(findRandomErr);
           return resolve(pins[0].url);
         });
       });
