@@ -1,7 +1,9 @@
 const mongoose = require('mongoose');
 
-const Pin = mongoose.model('Pin', {
+const PinSchema = mongoose.Schema({
   url: String
 });
 
-module.exports = Pin;
+PinSchema.plugin(require('mongoose-random'));
+
+module.exports = mongoose.model('Pin', PinSchema);
