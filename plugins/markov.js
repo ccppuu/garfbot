@@ -58,6 +58,8 @@ module.exports = {
 
   description: 'markov shitposting',
 
+  requirePrefix: true,
+
   fn(message) {
     const handle = regex.exec(message.text)[1];
     return getTweetsForUser(handle)

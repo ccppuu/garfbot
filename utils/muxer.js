@@ -28,11 +28,12 @@ module.exports = (data) => {
 
   const replyRe = new RegExp(`<@${self.id}>:`);
   const isToMe = replyRe.test(message.text);
-  if (!isToMe) return Promise.resolve();
 
   const promises = _(plugins)
     .filter(plugin => {
-      return !!plugin.regex && plugin.regex.test(message.text);
+      const isRegexMatch = !!plugin.regex && plugin.regex.test(message.text);
+      const isTarget = plugin.requirePrefix ? isToMe : true;
+      return isRegexMatch && isTarget;
     })
     .map(plugin => {
       return plugin.fn(message);
