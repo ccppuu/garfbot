@@ -20,3 +20,6 @@ Testing is done with [Mocha](https://mochajs.org/) using the [Chai assertion](ht
 Create a file named [plugin]-test.js in the `test/plugins/` folder. Take a look at `test/plugins/hello-test.js` as an example.
 
 Run the tests with `npm run test`.
+
+### Deploying
+Deployment is done by CircleCI after a PR is successfully merged to master.
