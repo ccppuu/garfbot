@@ -9,7 +9,7 @@ module.exports = {
   description: 'google image search',
 
   fn(message) {
-    const query = regex.exec(message)[1];
+    const query = regex.exec(message.text)[1];
     return imageSearch(query)
       .then(results => {
         const result = _.sample(results);

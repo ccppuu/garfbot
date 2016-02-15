@@ -35,7 +35,7 @@ module.exports = (data) => {
       return !!plugin.regex && plugin.regex.test(message.text);
     })
     .map(plugin => {
-      return plugin.fn(message.text);
+      return plugin.fn(message);
     })
     .value();
 

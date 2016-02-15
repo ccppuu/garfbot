@@ -1,5 +1,6 @@
 const logger = require('../utils/logger');
 const Pin = require('../models/pin-schema');
+const slackAPI = require('../lib/slack-api');
 
 const regex = /pin (\S*)/;
 
@@ -9,7 +10,7 @@ module.exports = {
   description: 'pin links to slack',
 
   fn(message) {
-    const matches = regex.exec(message);
+    const matches = regex.exec(message.text);
     if (matches.length < 2) {
       return Promise.resolve('gimme a cool url 2 pin :sunglasses:');
     }
@@ -24,7 +25,11 @@ module.exports = {
       })
       .then(count => {
         logger.info('total pins:', count);
-        return `pinned ${url} :garf:`;
+        slackAPI.reactions.add('garf', {
+          channel: message.channel,
+          timestamp: message.ts
+        });
+        return null;
       })
       .catch(err => {
         logger.error('error', err);

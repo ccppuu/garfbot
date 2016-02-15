@@ -59,7 +59,7 @@ module.exports = {
   description: 'markov shitposting',
 
   fn(message) {
-    const handle = regex.exec(message)[1];
+    const handle = regex.exec(message.text)[1];
     return getTweetsForUser(handle)
       .then(tweets => {
         const sentence = generateSentence(tweets);
