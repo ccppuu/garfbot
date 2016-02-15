@@ -6,6 +6,8 @@ module.exports = {
 
   description: 'garf barf a random pin',
 
+  requirePrefix: true,
+
   fn() {
     return new Promise((resolve, reject) => {
       Pin.syncRandom((err, result) => {

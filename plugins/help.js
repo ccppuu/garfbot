@@ -11,6 +11,8 @@ const plugins = require('require-all')({
 module.exports = {
   regex: /help/,
 
+  requirePrefix: true,
+
   fn(data) {
     var commands = [];
 

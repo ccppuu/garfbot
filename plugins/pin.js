@@ -9,6 +9,8 @@ module.exports = {
 
   description: 'pin links to slack',
 
+  requirePrefix: true,
+
   fn(message) {
     const matches = regex.exec(message.text);
     if (matches.length < 2) {

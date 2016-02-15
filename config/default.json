@@ -26,5 +26,16 @@
     "consumer_secret": null,
     "access_token": null,
     "access_token_secret": null
+  },
+
+  "plugins": {
+    "keyword-reactions": {
+      "keywords": {
+        "garf": "garf",
+        "gorf": "gorf",
+        "fieri": "slammajamma",
+        "wiz": ["wizgaze2", "wizgaze1"]
+      }
+    }
   }
 }
