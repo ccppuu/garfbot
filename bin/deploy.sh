@@ -34,7 +34,7 @@ garfbot_path=$bin_path/..
 echo "Copying garf files..."
 rsync -av --delete --progress --stats \
       --exclude 'node_modules' --exclude 'config/local.json' \
-      $garfbot_path circleci@garfweb:~/garfbot
+      $garfbot_path $GARFWEB_USER@$GARFWEB_HOST:~/garfbot
 
 echo "Garf copy complete."
 
