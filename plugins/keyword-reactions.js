@@ -16,9 +16,14 @@ module.exports = {
       var isFound = text.indexOf(word);
       if (isFound < 0) return;
 
-      slackAPI.reactions.add(emoji, {
+      const target = {
         channel: message.channel,
         timestamp: message.ts
+      };
+      const emojis = Array.isArray(emoji) ? emoji : [emoji];
+
+      _.forEach(emojis, emoji => {
+        slackAPI.reactions.add(emoji, target);
       });
     });
   }

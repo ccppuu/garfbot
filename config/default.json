@@ -34,7 +34,7 @@
         "garf": "garf",
         "gorf": "gorf",
         "fieri": "slammajamma",
-        "wiz": "wizgaze"
+        "wiz": ["wizgaze2", "wizgaze1"]
       }
     }
   }
