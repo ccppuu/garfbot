@@ -1,6 +1,5 @@
 const logger = require('../utils/logger');
 const Pin = require('../models/pin-schema');
-
 const regex = /pin (\S*)/;
 
 module.exports = {
@@ -9,7 +8,7 @@ module.exports = {
   description: 'pin links to slack',
 
   fn(message) {
-    const matches = regex.exec(message);
+    const matches = regex.exec(message.text);
     if (matches.length < 2) {
       return Promise.resolve('gimme a cool url 2 pin :sunglasses:');
     }
