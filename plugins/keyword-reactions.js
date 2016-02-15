@@ -20,7 +20,6 @@ module.exports = {
       var isFound = text.indexOf(word);
       if (isFound < 0) return;
 
-      console.log('adding ' + emoji + ' to ' + word);
       slackAPI.reactions.add(emoji, {
         channel: message.channel,
         timestamp: message.ts
