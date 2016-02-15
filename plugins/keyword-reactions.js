@@ -2,7 +2,7 @@ const _ = require('lodash');
 const config = require('config');
 const slackAPI = require('../lib/slack-api');
 
-const wordToEmoji = config.plugins["keyword-reactions"].keywords;
+const wordToEmoji = config.plugins['keyword-reactions'].keywords;
 
 module.exports = {
   regex: /.*/,
@@ -22,8 +22,8 @@ module.exports = {
       };
       const emojis = Array.isArray(emoji) ? emoji : [emoji];
 
-      _.forEach(emojis, emoji => {
-        slackAPI.reactions.add(emoji, target);
+      _.forEach(emojis, e => {
+        slackAPI.reactions.add(e, target);
       });
     });
   }
