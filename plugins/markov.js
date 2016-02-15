@@ -20,7 +20,7 @@ function getTweetsForUser(handle) {
   return twitter.get('statuses/user_timeline', {
     screen_name: handle,
     exclude_replies: true,
-    // include_rts: false,
+    include_rts: true,
     count: 150
   }).then(response => {
     const tweets = response.data;
