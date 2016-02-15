@@ -3,20 +3,22 @@ const config = require('config');
 const db = require('./lib/db');
 const logger = require('./utils/logger');
 const muxer = require('./utils/muxer');
-const slack = require('./lib/slack');
+const slackClient = require('./lib/slack-events');
+const slackAPI = require('./lib/slack-api');
 
-slack.on('message', message => {
-  var channel = slack.getChannelGroupOrDMByID(message.channel);
-  var user = slack.getUserByID(message.user);
+slackClient.on('message', message => {
+  logger.info(message);
 
-  var self = slack.self;
+  const self = {
+    id: slackClient.activeUserId
+  };
 
   muxer({
-    self, message
+    self,
+    message
   }).then(replies => {
-    _.each(replies, text => {
-      channel.postMessage({
-        text,
+    _.each(replies, reply => {
+      slackAPI.chat.postMessage(message.channel, reply, {
         username: config.username,
         icon_emoji: ':garf:'
       });
