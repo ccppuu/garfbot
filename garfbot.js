@@ -20,7 +20,7 @@ slackClient.on('message', message => {
     _.each(replies, reply => {
       slackAPI.chat.postMessage(message.channel, reply, {
         username: config.username,
-        icon_emoji: ':garf:',
+        icon_emoji: config.icon_emoji,
         unfurl_links: true,
         unfurl_media: true
       });
