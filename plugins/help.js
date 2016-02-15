@@ -18,7 +18,7 @@ module.exports = {
 
     _.each(plugins, plugin => {
       if (!plugin.regex || !plugin.description) return;
-      commands.push(`${plugin.regex} - ${plugin.description}`);
+      commands.push(`\`${plugin.regex}\` - ${plugin.description}`);
     });
     return commands.join('\n');
   }
