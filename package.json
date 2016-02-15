@@ -4,8 +4,9 @@
   "description": "gotta go fast loyal minion",
   "main": "garfbot.js",
   "scripts": {
-    "start": "nodemon garfbot.js",
+    "start": "./node_modules/nodemon/bin/nodemon.js garfbot.js",
     "test": "npm run lint && npm run mocha",
+    "deploy": "./bin/deploy.sh",
     "mocha": "NODE_ENV=test mocha test/**/*.js",
     "lint": "./node_modules/eslint/bin/eslint.js ."
   },
