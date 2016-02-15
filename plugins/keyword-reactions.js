@@ -2,11 +2,7 @@ const _ = require('lodash');
 const config = require('config');
 const slackAPI = require('../lib/slack-api');
 
-const wordToEmoji = {
-  gorf: 'gorf',
-  garf: 'garf',
-  fieri: 'slammajamma'
-};
+const wordToEmoji = config.plugins["keyword-reactions"].keywords;
 
 module.exports = {
   regex: /.*/,
