@@ -4,7 +4,9 @@
   "description": "gotta go fast loyal minion",
   "main": "garfbot.js",
   "scripts": {
+    "start": "./node_modules/nodemon/bin/nodemon.js garfbot.js",
     "test": "npm run lint && npm run mocha",
+    "deploy": "./bin/deploy.sh",
     "mocha": "NODE_ENV=test mocha test/**/*.js",
     "lint": "./node_modules/eslint/bin/eslint.js ."
   },
@@ -29,11 +31,13 @@
     "bluebird": "^3.3.0",
     "chance": "^1.0.0",
     "config": "^1.19.0",
+    "deployment": "^0.2.2",
     "googleapis": "^2.1.7",
     "lodash": "^4.3.0",
     "mongo-make-url": "0.0.1",
     "mongoose": "^4.4.3",
     "mongoose-random": "^0.1.1",
+    "nodemon": "^1.8.1",
     "request": "^2.69.0",
     "require-all": "^2.0.0",
     "simple-ngram-markov": "^1.0.4",
