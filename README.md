@@ -5,6 +5,8 @@
 
 gotta go fast
 
+
+![garfweb](https://pbs.twimg.com/media/CbSRCfnVIAA3LDS.jpg)
 ## How to add a plugin
 ### Getting started
 1. Create a `config/local.json` with all your secrets :crystal_ball:
