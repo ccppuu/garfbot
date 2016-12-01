@@ -5,10 +5,13 @@
 
 gotta go fast
 
-
 ![garfweb](https://pbs.twimg.com/media/CbSRCfnVIAA3LDS.jpg)
 ## How to add a plugin
-### Getting started
+### Prerequisites
+- node 7.2 (you can check your installed version with `node -v`)
+- npm (check your installed version with `npm -v`)
+
+### Setting up
 1. Create a `config/local.json` with all your secrets :crystal_ball:
 2. `npm install`
 3. `npm start`
