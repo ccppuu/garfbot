@@ -1,7 +1,7 @@
 const _ = require('lodash');
 const request = require('request');
 
-const FROG_API = 'http://frog.tips/api/1/tips';
+const FROG_API = 'https://frog.tips/api/1/tips/';
 
 module.exports = {
   regex: /frogtip/,
@@ -20,7 +20,7 @@ module.exports = {
 
         const tip = _.sample(body.tips);
 
-        return resolve(`\`${tip}\` :frog:`);
+        return resolve(`\`${tip.tip}\` :frog:`);
       });
     });
   }
