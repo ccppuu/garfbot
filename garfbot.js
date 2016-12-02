@@ -18,6 +18,10 @@ slackClient.on('message', message => {
     message
   }).then(replies => {
     _.each(replies, reply => {
+      if (!reply) {
+        return;
+      }
+
       slackAPI.chat.postMessage(message.channel, reply, {
         username: config.username,
         icon_emoji: config.icon_emoji,
@@ -25,5 +29,7 @@ slackClient.on('message', message => {
         unfurl_media: true
       });
     });
+  }).catch(error => {
+    console.error('An error occurred', error)
   });
 });
