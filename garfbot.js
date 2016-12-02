@@ -29,7 +29,5 @@ slackClient.on('message', message => {
         unfurl_media: true
       });
     });
-  }).catch(error => {
-    console.error('An error occurred', error)
   });
 });
