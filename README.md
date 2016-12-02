@@ -26,11 +26,11 @@ First, make a local config file. (This is done by copying the template, since `c
 cp ./config/local-template.js ./config/local.js
 ```
 
-Second, you'll want to [sign up for an mLab account](https://mlab.com/signup/) to create your development database. (Alternately, if you hate yourself, you could [run mongodb locally.](https://docs.mongodb.com/v3.2/administration/install-community/). In this case, you can jump right to the third step.)
+Second, you'll want to [sign up for an mLab account](https://mlab.com/signup/) to create your development database. (Alternately, if you hate yourself, you could [run mongodb locally](https://docs.mongodb.com/v3.2/administration/install-community/). In this case, you can jump right to the third step.)
 
 Once you've signed up for an mLab account, [create a new database](https://mlab.com/create). Choose the "single-node" plan, and the "sandbox" (free) tier. The default MongoDB version is fine. Name the database `garfbot-dev`.
 
-Once the database is created, [create a new user your local garfbot](https://mlab.com/databases/garfbot-dev#users). Click "+ Add database user". Use `garfbot` for the username, and choose a secure password (henceforth referred to as your `$MONGODB_PASSWORD`).
+Once the database is created, [create a new user for your local garfbot](https://mlab.com/databases/garfbot-dev#users). Click "+ Add database user". Use `garfbot` for the username, and choose a secure password (henceforth referred to as your `$MONGODB_PASSWORD`).
 
 Third, add your mongodb credentials to the `mongo` section of your [`config/local.js`](config/local.js).
 
