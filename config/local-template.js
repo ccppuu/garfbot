@@ -1,4 +1,10 @@
 module.exports = {
+  // The username for your bot in slack. It's probably easiest to give this
+  // the same name as your Slackbot (https://goodsonicfanart.slack.com/apps/A0F7YS25R-bots)
+  username: null,
+  // The emoji to use for your Slackbot. This can be whatever you want.
+  icon_emoji: ':gorf:',
+
   // Secrets for accessing the Google APIs. You'll need to grab these
   // from someone that has them.
   google: {
@@ -7,7 +13,7 @@ module.exports = {
   },
 
   mongo: {
-    db: 'garfbot-dev'
+    db: 'garfbot-dev',
     user: 'garfbot',
     // TODO: Fill this in with he database password for your 'garfbot' user
     // in the garfbot database.
@@ -19,7 +25,7 @@ module.exports = {
   },
 
   slack: {
-    default_room: 'shitposting-garfbot'
+    default_room: 'shitposting-garfbot',
     // TODO: Fill this in with your Slack API Token. You can find it at
     // https://goodsonicfanart.slack.com/apps/A0F7YS25R-bots
     // under your bot's config.

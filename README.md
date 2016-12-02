@@ -12,6 +12,12 @@ gotta go fast
 - npm (check your installed version with `npm -v`)
 
 ## Setting up
+Install the dependencies with:
+
+```bash
+npm install
+```
+
 Garfbot requires many :crystal_ball: secrets :crystal_ball:. Garfbot uses the [config](https://www.npmjs.com/package/config) package to manage them.
 
 First, make a local config file. (This is done by copying the template, since `config/local.json` is in the [`.gitignore`](.gitignore) file to keep the secrets safe.) We will be editing it as we go.
@@ -32,9 +38,17 @@ Fourth, [create a Slack bot for your garfbot](https://goodsonicfanart.slack.com/
 
 Fifth, grab the garfbot tokens for the Google Images and Twitter APIs from someone that has them. Add these to your [`config/local.js`](config/local.js) as well. (Alternately, you can set up your own Twitter app for your local garfbot at [http://apps.twitter.com/](http://apps.twitter.com/) if you prefer.)
 
+Sixth, confirm that everything is working by running the tests. (You should not see any test failures!)
 
+```bash
+npm run test
+```
 
+Finally, start up your local garfbot server:
 
+```bash
+npm start
+```
 
 ## Adding plugins
 Create a file named [plugin].js in the plugins/ folder. A plugin in its simplest form defines a regex, for matching Slack messages, and a `fn` function, for generating a string with which to reply. Take a look at `plugins/hello.js` for a simple example.
