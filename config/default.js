@@ -1,0 +1,45 @@
+module.exports = {
+  username: 'garfbot',
+  icon_emoji: ':garf:',
+
+  plugins_directory: 'plugins',
+
+  google: {
+    cse_id: null,
+    api_key: null
+  },
+
+  mongo: {
+    user: null,
+    password: null,
+    hosts: [],
+    db: null
+  },
+
+  slack: {
+    api_token: null,
+    default_room: 'general'
+  },
+
+  twitter: {
+    consumer_key: null,
+    consumer_secret: null,
+    access_token: null,
+    access_token_secret: null
+  },
+
+  plugins: {
+    'keyword-reactions': {
+      keywords: {
+        garf: 'garf',
+        gorf: 'gorf',
+        fieri: 'slammajamma',
+        wiz: ['wizgaze2', 'wizgaze1'],
+        benl: 'frog',
+        vape: 'cloud',
+        vaping: 'cloud',
+        blinsay: 'frog'
+      }
+    }
+  }
+};

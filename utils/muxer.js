@@ -26,7 +26,7 @@ module.exports = (data) => {
   const sender = message.username;
   if (sender === config.username) return Promise.resolve();
 
-  const replyRe = new RegExp(`<@${self.id}>:`);
+  const replyRe = new RegExp(`<@${self.id}>`);
   const isToMe = replyRe.test(message.text);
 
   const promises = _(plugins)
