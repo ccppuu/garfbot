@@ -30,11 +30,7 @@ Third, add your mongodb credentials to the `mongo` section of your [`config/loca
 
 Fourth, [create a Slack bot for your garfbot](https://goodsonicfanart.slack.com/apps/A0F7YS25R-bots). Click "Add Configuration". Choose a unique username for your bot. Add your API Token as the `slack.api_token` property of your [`config/local.js](config/local.js).
 
-
-
-
-
-
+Fifth, grab the garfbot tokens for the Google Images and Twitter APIs from someone that has them. Add these to your [`config/local.js`](config/local.js) as well. (Alternately, you can set up your own Twitter app for your local garfbot at [http://apps.twitter.com/](http://apps.twitter.com/) if you prefer.)
 
 
 
