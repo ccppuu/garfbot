@@ -22,22 +22,24 @@ module.exports = {
     logger.info('I heard a wizard: ', url);
 
 
-    Wizard.findOne({ url }, 'occurrences', function (err, seenWizard) {
+    Wizard.findOne({ url }, 'occurrences', (err, seenWizard) => {
       if (err) {
         logger.error('error', err);
         return null;
       }
+      var wizRecord;
       if (!seenWizard) {
-        seenWizard = new Wizard({
+        wizRecord = new Wizard({
           url,
           occurrences: 1,
-        })
+        });
       } else {
-        seenWizard.occurrences++;
+        wizRecord = seenWizard;
+        wizRecord.occurrences++;
       }
-      logger.info('seen this wiz:', seenWizard.occurrences);
+      logger.info('seen this wiz:', wizRecord.occurrences);
 
-      return seenWizard.save()
+      return wizRecord.save()
         .then(result => {
           if (result.occurrences === 1) {
             slackAPI.chat.postMessage(
