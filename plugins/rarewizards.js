@@ -19,31 +19,27 @@ module.exports = {
     }
 
     const url = matches[1];
-    logger.info('I heard a wizard: ', url)
+    logger.info('I heard a wizard: ', url);
 
 
-    Wizard.findOne({ 'url': url }, 'occurrences', function (err, seenWizard) {
+    Wizard.findOne({ url }, 'occurrences', function (err, seenWizard) {
       if (err) {
         logger.error('error', err);
         return null;
       }
-      if (seenWizard == null) {
+      if (!seenWizard) {
         seenWizard = new Wizard({
-          url: url,
+          url,
           occurrences: 1,
         })
       } else {
         seenWizard.occurrences++;
       }
-      logger.info('seen this wiz:', seenWizard.occurrences)
+      logger.info('seen this wiz:', seenWizard.occurrences);
 
       return seenWizard.save()
         .then(result => {
-          logger.info(`saved ${url}`);
-          return result;
-        })
-        .then(result => {
-          if(result.occurrences == 1) {
+          if (result.occurrences === 1) {
             slackAPI.chat.postMessage(
               message.channel,
               ':sparkles: :pray: PRAISE BE! A PREVIOUSLY UNSEEN WIZARD! :pray: :sparkles:',
@@ -52,9 +48,9 @@ module.exports = {
                 icon_emoji: config.icon_emoji,
                 unfurl_links: true,
                 unfurl_media: true
-              })
+              });
           }
-          return Wizard.count()
+          return Wizard.count();
         })
         .then(count => {
           logger.info('total wizards:', count);
@@ -64,9 +60,9 @@ module.exports = {
           });
           return null;
         })
-        .catch(err => {
-          logger.error('error', err);
+        .catch(unknownErr => {
+          logger.error('error', unknownErr);
         });
-    })
+    });
   }
 };
