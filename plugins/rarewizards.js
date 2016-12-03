@@ -3,7 +3,7 @@ const Wizard = require('../models/wizard-schema');
 const slackAPI = require('../lib/slack-api');
 const config = require('config');
 
-const regex = /^<(http:\/\/www.elftown.com\/stuff\/[a-zA-Z0-9\-\.\_\%]+.jpg).*>/;
+const regex = /^<(http:\/\/www.elftown.com\/stuff\/[a-zA-Z0-9\-\.\_\%\/]+.jpg).*>/;
 
 module.exports = {
   regex,
