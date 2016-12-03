@@ -13,6 +13,7 @@ module.exports = {
   requirePrefix: false,
 
   fn(message) {
+    var wizRecord;
     const matches = regex.exec(message.text);
     if (matches.length < 2) {
       return null;
@@ -27,7 +28,6 @@ module.exports = {
         logger.error('error', err);
         return null;
       }
-      var wizRecord;
       if (!seenWizard) {
         wizRecord = new Wizard({
           url,
