@@ -33,6 +33,7 @@ module.exports = {
       keywords: {
         garf: 'garf',
         gorf: 'gorf',
+        gart: 'gart',
         fieri: 'slammajamma',
         wiz: ['wizgaze2', 'wizgaze1'],
         benl: 'frog',
