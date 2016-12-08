@@ -18,21 +18,21 @@ module.exports = {
   fn(message) {
     var opts = {
       count: themeColours
-    }
+    };
+    var theme = '';
 
     const matches = regex.exec(message.text);
     if (matches.length >= 2) {
       const hue = matches[1].trim();
-      opts['hue'] = hue;
+      opts.hue = hue;
     }
 
     const colours = randomColour(opts);
-    var theme = ""
 
     for (var i = 0; i < themeColours; i++) {
       theme += colours[i];
       if (i < (themeColours - 1)) {
-        theme += ",";
+        theme += ',';
       }
     }
 
