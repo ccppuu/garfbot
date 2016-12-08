@@ -31,7 +31,6 @@ module.exports = {
     logger.info(colours);
 
     const theme = values(colours).join(',');
-
     return Promise.resolve(theme);
   }
 };
