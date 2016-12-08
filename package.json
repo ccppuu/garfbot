@@ -39,6 +39,7 @@
     "mongoose": "^4.4.3",
     "mongoose-random": "^0.1.1",
     "nodemon": "^1.8.1",
+    "randomcolor": "^0.4.4",
     "request": "^2.69.0",
     "require-all": "^2.0.0",
     "simple-ngram-markov": "^1.0.4",
