@@ -31,6 +31,17 @@ module.exports = {
     logger.info(colours);
 
     const theme = values(colours).join(',');
-    return Promise.resolve(theme);
+    slackAPI.chat.postMessage(
+      message.channel,
+      theme,
+      {
+        icon_emoji: config.icon_emoji,
+        unfurl_links: true,
+        unfurl_media: true,
+        // Using `as_user` is required to get the hex colour previews
+        // & a "switch sidebar theme" button.
+        as_user: true,
+      });
+    return Promise.resolve();
   }
 };
