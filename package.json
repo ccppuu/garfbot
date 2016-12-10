@@ -37,6 +37,7 @@
     "lodash": "^4.3.0",
     "mongo-make-url": "0.0.1",
     "mongoose": "^4.4.3",
+    "mongoose-find-one-or-create": "^0.2.0",
     "mongoose-random": "^0.1.1",
     "nodemon": "^1.8.1",
     "randomcolor": "^0.4.4",
