@@ -1,6 +1,7 @@
 const logger = require('../utils/logger');
 const config = require('config');
 const slackAPI = require('../lib/slack-api');
+const slackClient = require('../lib/slack-events');
 const Theme = require('../models/theme-schema');
 
 // cmdRegex matches the 'themes' plugin prefix and a subcommand (e.g. 'list')
@@ -38,9 +39,11 @@ const addTheme = (text, message) => {
 
 const printThemes = (message) => {
   Theme.find().then(themes => {
-    const themeList = themes.map((theme, i) =>
-      `${i + 1} - Theme _${theme.name}_ by ${theme.creator}:\n${theme.theme}`
-    ).join('\n');
+    const themeList = themes.map((theme, i) => {
+      const uInfo = slackClient.dataStore.users[theme.creator];
+      const name = uInfo ? uInfo.name : 'Unknown';
+      return `${i + 1} - Theme _*${theme.name}*_ by *${name}*:\n${theme.theme}`;
+    }).join('\n');
     slackAPI.chat.postMessage(
       message.channel,
       themeList,
