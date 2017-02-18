@@ -9,6 +9,16 @@ const idToName = (userID) => {
   return uInfo ? uInfo.name : 'Unknown';
 };
 
+
+/**
+ * @param {string} channelID - a slack channel ID (e.g. 'C39FWB6SF')
+ * @returns {string} the friendly channel name or 'Unknown'
+ */
+const channelToName = (channelID) => {
+  const cInfo = slackClient.dataStore.getChannelById(channelID);
+  return cInfo ? cInfo.name : 'Unknown';
+};
+
 /**
  * @param {string} username - a friendly username (e.g. 'cpu')
  * @returns {string} a 'quiet' version of the name that won't alert (e.g.
@@ -24,4 +34,5 @@ const quietName = (username) => {
 module.exports = {
   idToName,
   quietName,
+  channelToName,
 };
