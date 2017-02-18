@@ -37,6 +37,7 @@ module.exports = {
       topic,
       date: message.ts,
     });
+
     topicRecord.save().then(result => {
       return Topic.count();
     }).then(count => {
