@@ -9,7 +9,6 @@ const idToName = (userID) => {
   return uInfo ? uInfo.name : 'Unknown';
 };
 
-
 /**
  * @param {string} channelID - a slack channel ID (e.g. 'C39FWB6SF')
  * @returns {string} the friendly channel name or 'Unknown'
