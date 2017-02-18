@@ -4,7 +4,7 @@ const config = require('config');
 const Topic = require('../models/topic-schema');
 const names = require('../utils/names');
 
-const regex = /^<@([\w]+)\|[\w]+> set the channel topic: (.*)$/
+const regex = /^<@([\w]+)\|[\w]+> set the channel topic: (.*)$/;
 
 module.exports = {
   regex,
@@ -24,17 +24,17 @@ module.exports = {
       return null;
     }
 
-    const author = matches[1];
-    const authorName = names.idToName(author);
+    const creator = matches[1];
+    const creatorName = names.idToName(creator);
     const topic = matches[2];
     const channel = message.channel;
     const channelName = names.channelToName(channel);
-    logger.info('Caught', channelName, 'topic change by', authorName, 'to', topic);
+    logger.info('Caught', channelName, 'topic change by', creatorName, 'to', topic);
 
     const topicRecord = new Topic({
-      creator: author,
-      channel: channel,
-      topic: topic,
+      creator,
+      channel,
+      topic,
       date: message.ts,
     });
     topicRecord.save().then(result => {
