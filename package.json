@@ -32,7 +32,7 @@
     "chance": "^1.0.0",
     "config": "^1.19.0",
     "deployment": "^0.2.2",
-    "googleapis": "^2.1.7",
+    "googleapis": "^61.0.0",
     "lodash": "^4.3.0",
     "mongo-make-url": "0.0.1",
     "mongoose": "^4.4.3",
