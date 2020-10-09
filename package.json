@@ -35,7 +35,7 @@
     "googleapis": "^2.1.7",
     "lodash": "^4.3.0",
     "mongo-make-url": "0.0.1",
-    "mongoose": "^4.4.3",
+    "mongoose": "^5.10.9",
     "mongoose-random": "^0.1.1",
     "nodemon": "^1.8.1",
     "request": "^2.69.0",
